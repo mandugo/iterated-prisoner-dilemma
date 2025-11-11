@@ -7,7 +7,7 @@ l'analisi dei risultati.
 
 ## Requisiti
 
-* Python 3.11+
+* Python 3.10+
 * `pytest` per eseguire i test automatici.
 
 ## Utilizzo rapido
