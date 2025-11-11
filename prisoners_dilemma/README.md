@@ -26,6 +26,18 @@ outcome, log = match.play()
 print(outcome.mean_payoff_a, outcome.cooperation_rate_a)
 ```
 
+## Script di esempio
+
+Gli script nella cartella `prisoners_dilemma/examples/` mostrano come utilizzare il framework:
+
+* `basic_match.py`: esegue un match rumoroso tra Tit For Tat e Always Defect con riepilogo dei round.
+* `simple_tournament.py`: avvia un torneo round-robin tra più strategie e stampa la classifica finale.
+
+Esegui gli script direttamente oppure tramite modulo Python, ad esempio::
+
+    python -m prisoners_dilemma.examples.basic_match
+
+
 ## Test
 
 ```bash
