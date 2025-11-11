@@ -6,7 +6,7 @@ Consultare `prisoners_dilemma/README.md` per istruzioni dettagliate.
 ## Setup dell'ambiente con Conda
 
 1. Assicurarsi di avere [Conda](https://docs.conda.io) installato (Miniconda o Anaconda).
-2. Creare un nuovo ambiente con una versione supportata di Python:
+2. Creare un nuovo ambiente con una versione supportata di Python (>= 3.10). Ad esempio:
    ```bash
    conda create --name ipd-env python=3.11
    ```
@@ -23,4 +23,5 @@ Consultare `prisoners_dilemma/README.md` per istruzioni dettagliate.
    python -m pytest prisoners_dilemma/tests
    ```
 
+Il progetto sfrutta costrutti introdotti in Python 3.10; per questo motivo la CI ufficiale copre Python 3.10 e 3.11.
 Una volta completati i passaggi precedenti, è possibile utilizzare il pacchetto e gli script di esempio inclusi nel repository.
