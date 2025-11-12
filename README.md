@@ -97,6 +97,10 @@ prisoners_dilemma/
 
 For detailed design guidelines and architecture documentation, see [`agents.md`](agents.md).
 
+## Development Note
+
+This project was developed with the assistance of Large Language Models (LLMs) and AI coding assistants. The code has been reviewed and tested, but contributors should be aware that some portions may have been generated or refactored using AI tools. All code follows the project's quality standards and has been validated through the test suite.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
