@@ -1,27 +1,102 @@
-# Iterated Prisoner's Dilemma
+# Iterated Prisoner's Dilemma Framework
 
-Framework modulare per simulare tornei del Prisoner's Dilemma ripetuto.
-Consultare `prisoners_dilemma/README.md` per istruzioni dettagliate.
+A modular Python framework for simulating the Iterated Prisoner's Dilemma (IPD). This package provides classes to simulate matches, classic strategies, round-robin tournaments, and tools for analyzing and visualizing results.
 
-## Setup dell'ambiente con Conda
+## Requirements
 
-1. Assicurarsi di avere [Conda](https://docs.conda.io) installato (Miniconda o Anaconda).
-2. Creare un nuovo ambiente con una versione supportata di Python (>= 3.10). Ad esempio:
+- Python 3.10+
+- `matplotlib>=3.7` for visualizations
+- `numpy>=1.24` for array operations in heatmaps
+- `pytest>=7.4` for running automated tests
+
+## Installation
+
+### Using pip
+
+Install dependencies with:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Using Conda
+
+1. Make sure you have [Conda](https://docs.conda.io) installed (Miniconda or Anaconda).
+2. Create a new environment with a supported Python version (>= 3.10). For example:
    ```bash
    conda create --name ipd-env python=3.11
    ```
-3. Attivare l'ambiente appena creato:
+3. Activate the newly created environment:
    ```bash
    conda activate ipd-env
    ```
-4. Installare le dipendenze del progetto tramite `pip` usando il file `requirements.txt`:
+4. Install project dependencies using `pip` with the `requirements.txt` file:
    ```bash
    pip install -r requirements.txt
    ```
-5. (Opzionale) Verificare che tutto funzioni eseguendo la suite di test:
+5. (Optional) Verify everything works by running the test suite:
    ```bash
    python -m pytest prisoners_dilemma/tests
    ```
 
-Il progetto sfrutta costrutti introdotti in Python 3.10; per questo motivo la CI ufficiale copre Python 3.10 e 3.11.
-Una volta completati i passaggi precedenti, è possibile utilizzare il pacchetto e gli script di esempio inclusi nel repository.
+**Note**: This project uses constructs introduced in Python 3.10; for this reason, the official CI covers Python 3.10 and 3.11.
+
+## Quick Start
+
+```python
+from prisoners_dilemma.pd_core.player import Player
+from prisoners_dilemma.pd_core.game import IteratedMatch
+from prisoners_dilemma.strategies import TitForTat, AllDefect
+
+match = IteratedMatch(
+    Player(TitForTat()),
+    Player(AllDefect()),
+    n_rounds=100,
+)
+outcome, log = match.play()
+print(outcome.mean_payoff_a, outcome.cooperation_rate_a)
+```
+
+## Example Scripts
+
+The scripts in the `prisoners_dilemma/examples/` directory demonstrate how to use the framework:
+
+- **`basic_match.py`**: Runs a noisy match between Tit For Tat and Always Defect with a round-by-round summary.
+- **`simple_tournament.py`**: Runs a round-robin tournament between multiple strategies and prints the final leaderboard.
+- **`tournament_with_plots.py`**: Runs a complete tournament with 8 strategies and generates visualizations (leaderboard, heatmaps, distributions, time series). Results are saved in `data/results/tournament_YYYYMMDD_HHMMSS/`.
+
+Run the scripts directly or as Python modules:
+
+```bash
+python -m prisoners_dilemma.examples.basic_match
+python -m prisoners_dilemma.examples.simple_tournament
+python -m prisoners_dilemma.examples.tournament_with_plots
+```
+
+## Testing
+
+Run the test suite with:
+
+```bash
+pytest prisoners_dilemma/tests
+```
+
+## Project Structure
+
+```
+prisoners_dilemma/
+├─ pd_core/          # Core game logic, tournaments, metrics
+├─ strategies/       # Strategy implementations
+├─ visuals/          # Plotting and visualization tools
+├─ experiments/      # Experiment configuration and analysis
+├─ examples/         # Example scripts
+└─ tests/           # Test suite
+```
+
+## Documentation
+
+For detailed design guidelines and architecture documentation, see [`agents.md`](agents.md).
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
