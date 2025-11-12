@@ -392,7 +392,29 @@ exp_id, strategy, mean_payoff, std_payoff, mean_coop_rate
 
 16) Riferimenti sintetici
 	•	R. Axelrod, The Evolution of Cooperation.
-	•	Press & Dyson (2012), Iterated Prisoner’s Dilemma contains strategies that dominate any evolutionary opponent.
+	•	Press & Dyson (2012), Iterated Prisoner's Dilemma contains strategies that dominate any evolutionary opponent.
+
+⸻
+
+17) Implementazioni completate
+
+17.1 Visualizzazioni (prisoners_dilemma/visuals/plots.py)
+	•	cooperation_curve(log): curva temporale del tasso di cooperazione cumulativo per un match.
+	•	plot_leaderboard(leaderboard): grafico a barre orizzontali della classifica del torneo.
+	•	plot_payoff_heatmap(results): heatmap dei payoff medi per ogni matchup strategia vs strategia.
+	•	plot_cooperation_heatmap(results): heatmap dei tassi di cooperazione per ogni matchup.
+	•	plot_payoff_distribution(results): box plot della distribuzione dei payoff per strategia.
+	•	plot_match_timeseries(log, player_a_name, player_b_name): serie temporale con tasso di cooperazione e payoff cumulativo per un match specifico.
+
+17.2 Script torneo con visualizzazioni (prisoners_dilemma/examples/tournament_with_plots.py)
+	•	Esegue un torneo round-robin completo con 8 strategie (ALLC, ALLD, TFT, TF2T, GRIM, PAVLOV, GTFT, RAND).
+	•	Genera automaticamente tutte le visualizzazioni e le salva in directory timestampate (data/results/tournament_YYYYMMDD_HHMMSS/).
+	•	Include serie temporali per matchup interessanti (TFT vs GRIM, PAVLOV vs GTFT, TFT vs ALLD).
+	•	Salva un file di riepilogo testuale con statistiche del torneo.
+	•	Parametri configurabili: n_rounds=200, repetitions=5, noise epsilon=0.02.
+
+17.3 Dipendenze aggiunte
+	•	numpy>=1.24: utilizzato per operazioni su array nelle heatmap e visualizzazioni.
 
 ⸻
 

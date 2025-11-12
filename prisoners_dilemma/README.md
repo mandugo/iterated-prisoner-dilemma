@@ -8,7 +8,13 @@ l'analisi dei risultati.
 ## Requisiti
 
 * Python 3.10+
-* `pytest` per eseguire i test automatici.
+* `matplotlib>=3.7` per le visualizzazioni
+* `numpy>=1.24` per le operazioni su array nelle heatmap
+* `pytest>=7.4` per eseguire i test automatici
+
+Installa le dipendenze con::
+
+    pip install -r requirements.txt
 
 ## Utilizzo rapido
 
@@ -32,10 +38,12 @@ Gli script nella cartella `prisoners_dilemma/examples/` mostrano come utilizzare
 
 * `basic_match.py`: esegue un match rumoroso tra Tit For Tat e Always Defect con riepilogo dei round.
 * `simple_tournament.py`: avvia un torneo round-robin tra più strategie e stampa la classifica finale.
+* `tournament_with_plots.py`: esegue un torneo completo con 8 strategie e genera visualizzazioni (leaderboard, heatmap, distribuzioni, serie temporali). I risultati vengono salvati in `data/results/tournament_YYYYMMDD_HHMMSS/`.
 
 Esegui gli script direttamente oppure tramite modulo Python, ad esempio::
 
     python -m prisoners_dilemma.examples.basic_match
+    python -m prisoners_dilemma.examples.tournament_with_plots
 
 
 ## Test
