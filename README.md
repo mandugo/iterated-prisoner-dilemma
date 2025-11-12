@@ -99,7 +99,9 @@ For detailed design guidelines and architecture documentation, see [`agents.md`]
 
 ## Development Note
 
-This project was developed with the assistance of Large Language Models (LLMs) and AI coding assistants. The code has been reviewed and tested, but contributors should be aware that some portions may have been generated or refactored using AI tools. All code follows the project's quality standards and has been validated through the test suite.
+This project was developed as an experiment in LLM-assisted coding. The initial design and architecture were outlined in [`agents.md`](agents.md), which served as the blueprint for the entire framework. Subsequent development was carried out using AI coding assistants (Codex/GPT) based on that architectural specification.
+
+The code has been reviewed and tested, and all components follow the project's quality standards as validated through the test suite. This project serves as both a functional IPD framework and a demonstration of structured LLM-assisted software development.
 
 ## License
 
